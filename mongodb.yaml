@@ -8,7 +8,7 @@
       dest: /etc/yum.repos.d/mongodb.repo
   
   - name: Install mongodb
-    ansible.builtin.command: yum install mongodb-org -y
+    ansible.builtin.shell: yum install mongodb-org -y
       
 
   - name: start and enable mongodb

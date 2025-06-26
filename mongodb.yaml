@@ -17,6 +17,7 @@
       enabled: yes
    - name: replace local host to remote
      ansible.builtin.replace:
+      path: /etc/mongod.conf
       regexp: '127.0.0.0'
       replace: '0.0.0.0'
    - name: restart mongodb

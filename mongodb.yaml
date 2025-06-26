@@ -9,7 +9,7 @@
   
   - name: Install mongodb
     ansible.builtin.package:
-      name: mongodb-org-4.2
+      name: mongodb-org
       state: present
 
   - name: start and enable mongodb

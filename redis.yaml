@@ -1,0 +1,9 @@
+- name: redis server
+  hosts: redis
+  become: yes
+  tasks:
+    - name: install redis repo as rpm 
+      ansible.builtin.command: dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm 
+      disable_gpg_check: true
+      
+  

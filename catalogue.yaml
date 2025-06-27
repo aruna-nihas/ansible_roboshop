@@ -18,9 +18,8 @@
       url: https://roboshop-builds.s3.amazonaws.com/catalogue.zip
       dest: /tmp 
    - name: unzip or extact catalogue application in app directory
-     ansible.builtin.unarchieve:
+     ansible.builtin.unarchive:
       src: /tmp/catalogue.zip
       dest: /app
    - name: install dependencies
      ansible.builtin.command: npm install
-     

@@ -9,10 +9,9 @@
 
    - name: allow remote connections
      ansible.builtin.replace:
-      path: /etc/redis/redis.conf
+      path: /etc/redis.conf
       regexp: '127.0.0.1'
       replace: '0.0.0.0'
-      remote_src: yes
 
    - name: start and enable redis
      ansible.builtin.service:

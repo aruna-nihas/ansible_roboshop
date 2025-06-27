@@ -16,10 +16,11 @@
    - name: download the application code into app directory
      ansible.builtin.get_url:
       url: https://roboshop-builds.s3.amazonaws.com/catalogue.zip
-      dest: /tmp/catalogue.zip
+      dest: /tmp/
    - name: unzip or extact catalogue application in app directory
      ansible.builtin.unarchive:
-      src: /tmp/catalogue.zip
-      dest: /app
+       src: /tmp/catalogue.zip
+       dest: /app
+       remote_src: yes 
    - name: install dependencies
      ansible.builtin.command: npm install

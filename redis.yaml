@@ -3,7 +3,7 @@
   become: yes
   tasks:
 - name: install redis
-  ansible.builtin.dnf:
+  ansible.builtin.package:
       name: redis
       state: present
 

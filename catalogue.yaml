@@ -42,3 +42,14 @@
      ansible.builtin.package:
       name: mongodb-org-shell
       state: present
+   - name: get the categories count
+     ansible.builtin.command: mongo --host 172.31.91.163 --quiet --eval 'db = db.getSiblingDB("catalogue");db.products.count()'
+     register: product_count
+   - name: load catalogue data(schema)
+     ansible.builtin.command: mongo --host 172.31.91.163 </app/schema/catalogue.js
+     when: product_count.stdout == 0
+   - name: start and enable catalogue
+     ansible.builtin.service:
+       name: catalogue
+       state: restarted
+       enabled: yes

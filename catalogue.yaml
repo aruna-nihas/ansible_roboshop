@@ -32,7 +32,7 @@
       dest: /etc/systemd/system/catalogue.service
    - name: daemon reload and start
      ansible.builtin.systemd_service:
-      daemon reload: true
+      daemon_reload: true
   # start the service after data is loaded
    - name: copy mongo repo
      ansible.builtin.copy:
